@@ -1,7 +1,5 @@
 # 🚀 Introduction to Spring Boot
 
----
-
 ## 🍃 What is Spring Boot?
 
 * A framework built on top of **Spring Framework**

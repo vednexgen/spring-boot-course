@@ -17,6 +17,8 @@ A web application is software accessed through a browser and runs on a server. I
 4. **Server sends an HTTP response** back to the browser.
 5. **Browser renders** the response (e.g., displays a web page or shows JSON data).
 
+---
+
 ## 📚 HTTP Protocol: The Backbone of Web Communication
 
 ### 🏷️ What is HTTP?
@@ -135,6 +137,8 @@ Web browser sends a request, server processes and responds, browser displays the
 4. **Send HTTP Request:** Browser requests the home page.
 5. **Server Processes Request:** Finds the correct resource or runs backend logic.
 6. **Send HTTP Response:** Server sends HTML, browser renders it.
+
+---
 
 ## ✨ Summary
 
