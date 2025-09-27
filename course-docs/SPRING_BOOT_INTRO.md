@@ -1,4 +1,4 @@
-# Introduction to Spring Boot
+# 🚀 Introduction to Spring Boot
 
 ---
 
@@ -15,9 +15,11 @@
 
 ## ⚙️ Traditional Approach (Servlets & Spring MVC)
 
-### Evolution: From Servlets → Spring MVC → Spring Boot
+### 📚 Evolution of Spring Boot 
 
-### Servlets (Early Days)
+> From Servlets → Spring MVC → Spring Boot
+
+### 🏷️ Servlets (Early Days)
 
 * Low-level API for handling HTTP requests & responses
 * Requires lots of **boilerplate code**
@@ -57,9 +59,7 @@ public class HelloServlet extends HttpServlet {
 
 ---
 
-**Flow:**
-
-* Client Request → Web Server → Servlet Container → Servlet → Response.
+#### 🔹 Flowchart / Diagram
 
 ```mermaid
 graph LR
@@ -71,7 +71,7 @@ graph LR
 
 ---
 
-### Spring MVC (Improved)
+### 🏷️ Spring MVC (Improved)
 
 * Built on top of Servlets. Thus, improved abstraction over Servlets.
 * * Introduces **DispatcherServlet** that acts as the **front controller**.
@@ -127,9 +127,7 @@ public class HelloController {
 
 ---
 
-**Flow:**
-
-* Client Request → DispatcherServlet → Controller → Model → View → Response.
+#### 🔹 Flowchart / Diagram
 
 ```mermaid
 graph LR
@@ -142,7 +140,7 @@ graph LR
 
 ---
 
-### Spring Boot (Modern Approach)
+### 🏷️ Spring Boot (Modern Approach)
 
 * Built on top of Spring Framework, designed to **remove configuration pain**.
 * Provides **auto-configuration**, **embedded servers**, and **starter dependencies**.
@@ -175,9 +173,7 @@ public class DemoApplication {
 
 ---
 
-**Flow:**
-
-* Client → Request → Embedded Server (Tomcat/Jetty) → Spring Context → Controller → Response.
+#### 🔹 Flowchart / Diagram
 
 ```mermaid
 graph LR
@@ -189,7 +185,7 @@ graph LR
 
 ---
 
-👉 Run with:
+👉 Run application with:
 
 ```
 # Using maven 
@@ -255,19 +251,19 @@ graph TD;
 
 ---
 
-## 🔄 Comparison Table
+### 🔄 Comparison Table
 
-| Feature                 |         Servlets          |      Spring Boot      |        Spring MVC        |
-|:------------------------|:-------------------------:|:---------------------:|:------------------------:|
-| Configuration           |    Manual (`web.xml`)     |    Auto-configured    |      XML/Java-based      |
-| Server Setup            | Requires external server  | Embedded Tomcat/Jetty | Requires external server |
-| Development Speed       |   Slow (low-level API)    |  Fast (ready-to-use)  | Moderate (manual config) |
-| Microservices Support   |           ❌ No           |     ✅ Excellent      |   ⚠️ Limited             |
-| Production Monitoring   |           ❌ No           |      ✅ Actuator      |           ❌ No          |
+| Feature                 |         Servlets          |        Spring MVC        |      Spring Boot      |
+|:------------------------|:-------------------------:|:------------------------:|:---------------------:|
+| Configuration           |    Manual (`web.xml`)     |      XML/Java-based      |    Auto-configured    |
+| Server Setup            | Requires external server  | Requires external server | Embedded Tomcat/Jetty |
+| Development Speed       |   Slow (low-level API)    | Moderate (manual config) |  Fast (ready-to-use)  |
+| Microservices Support   |           ❌ No           |   ⚠️ Limited             |     ✅ Excellent      |
+| Production Monitoring   |           ❌ No           |           ❌ No          |      ✅ Actuator      |
 
 ---
 
-## 🎯 Summary
+## ✨ Summary
 
 * **Servlets** → Low-level, verbose
 * **Spring MVC** → Structured but still config-heavy
@@ -277,4 +273,4 @@ graph TD;
 
 ---
 
-[![](https://img.shields.io/badge/Go_Back-🔙-d6cadd?style=for-the-badge&labelColor=d6cadd)](../README.md)
+[![](https://img.shields.io/badge/Go_Back-🔙-d6cadd?style=for-the-badge&labelColor=d6cadd)](./TABLE_CONTENT_README.md)
