@@ -1,11 +1,17 @@
-# Compiled class file
-*.class
+HELP.md
+target/
+.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
 
 # Log file
 *.log
 
-#intellij
+### IntelliJ IDEA ###
 .idea
+*.iws
+*.iml
+*.ipr
 
 # BlueJ files
 *.ctxt
