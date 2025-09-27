@@ -192,7 +192,7 @@ graph LR
 👉 Run with:
 
 ```
-# Using mavem 
+# Using maven 
 mvn spring-boot:run
 ```
 
@@ -246,11 +246,24 @@ graph TD;
 4. **Production-Ready Tools**
 
     * Actuator, Logging, Metrics, Health monitoring
+    * Actuator endpoints for monitoring.
 
 5. **Developer Productivity**
 
     * Spring Boot Starter dependencies
     * Rapid prototyping with Spring Initializr
+
+---
+
+## 🔄 Comparison Table
+
+| Feature                 |         Servlets          |      Spring Boot      |        Spring MVC        |
+|:------------------------|:-------------------------:|:---------------------:|:------------------------:|
+| Configuration           |    Manual (`web.xml`)     |    Auto-configured    |      XML/Java-based      |
+| Server Setup            | Requires external server  | Embedded Tomcat/Jetty | Requires external server |
+| Development Speed       |   Slow (low-level API)    |  Fast (ready-to-use)  | Moderate (manual config) |
+| Microservices Support   |           ❌ No           |     ✅ Excellent      |   ⚠️ Limited             |
+| Production Monitoring   |           ❌ No           |      ✅ Actuator      |           ❌ No          |
 
 ---
 
@@ -261,3 +274,7 @@ graph TD;
 * **Spring Boot** → Simplified, auto-configured, production-ready
 
 👉 Spring Boot is the **modern standard** for building Java applications.
+
+---
+
+[![](https://img.shields.io/badge/🔙_Go_Back-white?style=for-the-badge)](../README.md)
