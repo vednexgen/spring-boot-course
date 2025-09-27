@@ -37,6 +37,6 @@ Spring Boot is a powerful, easy-to-use framework for building modern web applica
 ---
 
 ## 🚀 Ready to dive in?
-[![Let's Go](https://img.shields.io/badge/Let's_Go_🔄-white?style=for-the-badge)](./course-docs/SPRING_BOOT_INTRO.md)
+[![Let's Go](https://img.shields.io/badge/Let's_Go-🔄-white?style=for-the-badge)](./course-docs/SPRING_BOOT_INTRO.md)
 
 ---
