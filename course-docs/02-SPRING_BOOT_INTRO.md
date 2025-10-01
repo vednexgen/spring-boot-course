@@ -72,7 +72,7 @@ graph LR
 ### 🏷️ Spring MVC (Improved)
 
 * Built on top of Servlets. Thus, improved abstraction over Servlets.
-* * Introduces **DispatcherServlet** that acts as the **front controller**.
+  * Introduces **DispatcherServlet** that acts as the **front controller**.
 * Provides **Model-View-Controller** architecture.
 * Provides **annotations** like `@Controller`, `@RequestMapping` for request handling.
 * Reduces boilerplate as compare to Servlets.
