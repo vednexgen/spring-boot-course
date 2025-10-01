@@ -58,20 +58,20 @@ Hello, World!
 
 #### HTTP Methods (Verbs)
 | Method | Description    | Typical Use          |
-|--------|----------------|---------------------|
-| GET    | Retrieve data  | Viewing a page      |
-| POST   | Send data      | Submitting a form   |
-| PUT    | Update data    | Editing a resource  |
-| DELETE | Remove data    | Deleting a resource |
+|--------|----------------|----------------------|
+| GET    | Retrieve data  | Viewing a page       |
+| POST   | Send data      | Submitting a form    |
+| PUT    | Update data    | Editing a resource   |
+| DELETE | Remove data    | Deleting a resource  |
 
 #### HTTP Status Codes
-| Code | Meaning               |
-|------|-----------------------|
-| 200  | OK (Success)          |
-| 201  | Created (POST Success)|
-| 400  | Bad Request           |
-| 404  | Not Found             |
-| 500  | Internal Server Error |
+| Code | Meaning                 |
+|------|-------------------------|
+| 200  | OK (Success)            |
+| 201  | Created (POST Success)  |
+| 400  | Bad Request             |
+| 404  | Not Found               |
+| 500  | Internal Server Error   |
 
 #### Headers
 - Used for extra information (e.g., authentication, content type, cookies).
