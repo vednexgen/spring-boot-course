@@ -2,9 +2,9 @@
 
 ## 📑 Table of Contents
 
-- [Introduction to Spring Boot](./SPRING_BOOT_INTRO.md)
-- [Fundamentals of Web Applications & HTTP](WEB_TECH_N_HTTP.md)
-
+- [Fundamentals of Web Applications & HTTP](01-WEB_TECH_N_HTTP.md)
+- [Introduction to Spring Boot](02-SPRING_BOOT_INTRO.md)
+- []()
 
 ---
 
