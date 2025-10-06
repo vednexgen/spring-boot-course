@@ -23,7 +23,7 @@ Spring Boot simplifies project setup with:
 
 ### 2️⃣ Tools Required
 
-* **JDK (Java 8/11/17)** – depending on your environment.
+* **JDK (Java 8/11/17/25)** – depending on your environment.
 * **IDE** – IntelliJ IDEA / Eclipse / VS Code.
 * **Maven/Gradle** – comes with most IDEs.
 * **Spring Initializr** – [start.spring.io](https://start.spring.io).

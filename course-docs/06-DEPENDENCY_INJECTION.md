@@ -1,4 +1,4 @@
-# 🚀 Dependency Injection & Spring Core
+# 🚀 Dependency Injection, It's Type and Autowiring Modes
 
 ---
 
@@ -238,6 +238,50 @@ public class CarService {
     }
 }
 ```
+---
+
+## 🏷️ `@Qualifier` Annotation
+
+When multiple beans of the same type exist, `@Qualifier` helps Spring identify which bean to inject.
+
+**Example:**
+
+```java
+@Component("petrolEngine")
+public class PetrolEngine implements Engine {
+    public void start() {
+        System.out.println("Petrol Engine started");
+    }
+}
+
+@Component("dieselEngine")
+public class DieselEngine implements Engine {
+    public void start() {
+        System.out.println("Diesel Engine started");
+    }
+}
+
+@Service
+public class CarService {
+
+    private final Engine engine;
+
+    @Autowired
+    public CarService(@Qualifier("dieselEngine") Engine engine) {
+        this.engine = engine;
+    }
+
+    public void startCar() {
+        engine.start();
+    }
+}
+```
+
+**Explanation:**
+
+* Both `PetrolEngine` and `DieselEngine` implement the `Engine` interface.
+* Spring gets confused about which bean to inject.
+* `@Qualifier` explicitly tells Spring which bean to use.
 
 ---
 
@@ -258,3 +302,239 @@ public class CarService {
 * Key Annotations: @Component, @Service, @Repository, @Autowired.
 
 ---
+
+# 🚀 Types of Dependency Injection in Spring
+
+---
+
+## 🏷️ Constructor Injection
+
+Dependencies are provided through the class constructor. This is the **recommended approach** in Spring because it ensures that dependencies are available when the object is created, promoting immutability and easier testing.
+
+### 🧩 Example:
+
+```java
+@Component
+public class Engine {
+    public void start() {
+        System.out.println("Engine started...");
+    }
+}
+
+@Component
+public class Car {
+    private final Engine engine;
+
+    @Autowired
+    public Car(Engine engine) {   // Constructor Injection
+        this.engine = engine;
+    }
+
+    public void drive() {
+        engine.start();
+        System.out.println("Car is running...");
+    }
+}
+```
+
+**✅ Advantages:**
+
+* Promotes immutability (final fields)
+* Makes unit testing easier
+* Avoids `NullPointerException`
+
+**⚠️ Disadvantage:**
+
+* Can become verbose if there are many dependencies
+
+---
+
+## 🏷️ Setter Injection
+
+Dependencies are provided through setter methods after the object is constructed.
+
+### 🧩 Example:
+
+```java
+@Component
+public class Car {
+    private Engine engine;
+
+    @Autowired
+    public void setEngine(Engine engine) {   // Setter Injection
+        this.engine = engine;
+    }
+
+    public void drive() {
+        engine.start();
+        System.out.println("Car is running...");
+    }
+}
+```
+
+**✅ Advantages:**
+
+* Allows re-injection of dependencies
+* Good for optional dependencies
+
+**⚠️ Disadvantage:**
+
+* Object can be in an invalid state if dependency isn’t set before use
+
+---
+
+## 🏷️ Field Injection
+
+Dependencies are injected directly into class fields using `@Autowired`.
+
+### 🧩 Example:
+
+```java
+@Component
+public class Car {
+    @Autowired
+    private Engine engine;  // Field Injection
+
+    public void drive() {
+        engine.start();
+        System.out.println("Car is running...");
+    }
+}
+```
+
+**✅ Advantages:**
+
+* Simplifies code (less boilerplate)
+
+**⚠️ Disadvantages:**
+
+* Harder to test (no control over dependency initialization)
+* Violates immutability principles
+
+---
+
+## 📌 Best Practice:
+
+> Prefer **Constructor Injection** for mandatory dependencies and **Setter Injection** for optional ones.
+
+---
+
+
+## ✨ Summary Table
+
+| Type                  | How Dependencies Are Injected | Example                     | Advantages              | Disadvantages              |
+| --------------------- | ----------------------------- | --------------------------- | ----------------------- | -------------------------- |
+| Constructor Injection | Through class constructor     | `@Autowired` on constructor | Immutable, Testable     | Verbose with many deps     |
+| Setter Injection      | Through setter method         | `@Autowired` on setter      | Flexible, Optional deps | Risk of null dependencies  |
+| Field Injection       | Directly on field             | `@Autowired` on field       | Simple                  | Hard to test, less control |
+
+---
+
+# 🚀 Autowiring Modes in Spring Dependency Injection
+
+---
+
+## 📚 What is Autowiring?
+
+Autowiring is the process by which Spring automatically resolves and injects collaborating beans (dependencies) into a class without the need for explicit configuration.
+
+Spring identifies dependencies either **by type**, **by name**, or **via constructor arguments**.
+
+---
+
+## 🏷️ Different Autowiring Modes
+
+| Mode                          | Description                                                                               | Example                    | Annotation Equivalent                   |
+| ----------------------------- | ----------------------------------------------------------------------------------------- | -------------------------- | --------------------------------------- |
+| **no** (default)              | No autowiring. Dependencies must be explicitly defined using configuration (XML or Java). | Manual wiring              | None                                    |
+| **byName**                    | Spring injects a bean whose name matches the name of the property.                        | Match by bean name         | `@Autowired` + `@Qualifier("beanName")` |
+| **byType**                    | Spring injects a bean whose type matches the property type.                               | Match by class type        | `@Autowired` (default behavior)         |
+| **autodetect** *(deprecated)* | Spring automatically chooses between `constructor` or `byType`.                           | Deprecated                 | None                                    |
+
+---
+
+### 🔹 Autowiring by Type (Default)
+
+Spring injects dependencies by matching the **type** of the bean.
+
+```java
+@Component
+public class Engine {
+    public void start() {
+        System.out.println("Engine started...");
+    }
+}
+
+@Component
+public class Car {
+    @Autowired  // byType
+    private Engine engine;
+
+    public void drive() {
+        engine.start();
+        System.out.println("Car is running...");
+    }
+}
+```
+
+**Explanation:**
+Spring looks for a bean of type `Engine` and injects it automatically.
+
+---
+
+### 🔹 Autowiring by Name
+
+Spring injects dependencies by matching the **property name** with the bean name.
+
+```java
+@Component("dieselEngine")
+public class Engine {
+    public void start() {
+        System.out.println("Diesel Engine started...");
+    }
+}
+
+@Component
+public class Car {
+    @Autowired
+    @Qualifier("dieselEngine") // byName
+    private Engine engine;
+
+    public void drive() {
+        engine.start();
+        System.out.println("Car is running...");
+    }
+}
+```
+
+**Explanation:**
+The `@Qualifier` annotation tells Spring which specific bean to inject if multiple beans of the same type exist.
+
+---
+
+## ✨ Summary
+
+| Autowiring Mode | Matching Type      | Modern Annotation Equivalent | Use Case                               |
+| --------------- | ------------------ | ---------------------------- | -------------------------------------- |
+| byType          | Bean type          | `@Autowired`                 | Default and most common                |
+| byName          | Bean name          | `@Qualifier`                 | When multiple beans of same type exist |
+
+---
+
+### 📌 Key Notes
+
+✅ Prefer **constructor-based autowiring** for required dependencies.
+✅ Use **@Qualifier** when multiple beans of the same type exist.
+✅ Avoid **field injection** in favor of constructor injection for better testability.
+
+---
+
+```mermaid
+graph TD
+    A[Spring Container] -->|byType| B[Match Bean by Class Type]
+    A -->|byName| C[Match Bean by Property Name]
+    B --> E[Dependency Injected Successfully]
+    C --> E
+```
+---
+
