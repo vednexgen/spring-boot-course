@@ -10,7 +10,7 @@ By the end of this lesson, students will be able to:
 
 ---
 
-### 1️⃣ Why Configuration Files?
+### 🏷️ Why Configuration Files?
 
 Spring Boot allows **externalized configuration** so we don’t hardcode values in code.
 We store environment-specific details (like DB URLs, ports, logging, etc.) in config files.
@@ -22,7 +22,7 @@ Spring Boot provides two formats:
 
 ---
 
-### 2️⃣ `application.properties`
+### 🏷️ `application.properties`
 
 * Default config file.
 * Simple **key=value** format.
@@ -44,7 +44,7 @@ logging.level.org.springframework=DEBUG
 
 ---
 
-### 3️⃣ `application.yml`
+### 🏷️ `application.yml`
 
 * Uses **YAML syntax** (indentation-based).
 * Cleaner for hierarchical configs.
@@ -68,7 +68,7 @@ logging:
 
 ---
 
-### 4️⃣ How Does Spring Boot Load Them?
+### 🏷️ How Does Spring Boot Load Them?
 
 * Spring Boot loads config from:
 
@@ -80,7 +80,7 @@ logging:
 
 ---
 
-### 5️⃣ Properties vs YAML – Comparison
+### 🏷️ Properties vs YAML – Comparison
 
 | Feature     | `application.properties`              | `application.yml`                        |
 | ----------- | ------------------------------------- | ---------------------------------------- |
@@ -91,7 +91,7 @@ logging:
 
 ---
 
-### 6️⃣ Profiles – Multiple Environments
+### 🏷️ Profiles – Multiple Environments
 
 We can define configs for **dev, test, prod** profiles.
 

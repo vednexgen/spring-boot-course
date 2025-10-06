@@ -6,18 +6,48 @@
 
 ### 🔹 What is ORM?
 
-Object Relational Mapping (ORM) is a technique to map Java objects to database tables and vice versa. This helps developers work with database data using objects instead of SQL queries.
+Object Relational Mapping (ORM) is a technique to map Java objects to database tables and vice versa.  
+This helps developers work with databases using object-oriented concepts instead of writing raw SQL queries.
 
-### 🔹 JPA (Java Persistence API)
+### 🔹 Key Benefits:
 
-* Standard specification for ORM in Java.
-* Defines APIs for CRUD operations, queries, and transactions.
-* Vendor-neutral.
+- Reduces boilerplate SQL code 
+- Easier to maintain and extend 
+- Database agnostic development
 
-### 🔹 Hibernate
+**Example:**
+Java Class ↔ Database Table mapping
 
-* Most popular JPA implementation.
-* Provides additional features like caching, lazy loading, etc.
+| Java Object  | Database Table |
+| ------------ | -------------- |
+| `Employee`   | `employee`     |
+| `employeeId` | `employee_id`  |
+| `name`       | `name`         |
+
+---
+
+## 🏷️ What is JPA (Java Persistence API)?
+
+**JPA (Java Persistence API)** is a specification for ORM in Java. It defines how data should be persisted and retrieved in a relational database using Java objects.
+
+**Key Features:**
+
+* Standard API for ORM
+* Object-relational mapping
+* Entity lifecycle management
+
+---
+
+## 🏷️ What is Hibernate?
+
+**Hibernate** is a widely-used ORM framework that implements the JPA specification. Spring Boot uses Hibernate as the default JPA provider.
+
+**Features of Hibernate:**
+
+* Automatic SQL generation
+* Provides caching. lazy/eager loading of data
+* Transaction management
+* 
 
 ---
 
@@ -48,9 +78,18 @@ public interface UserRepository extends JpaRepository<User, Long> {}
 
 ---
 
-## 🏷️ Demo: Connect Spring Boot to H2/MySQL
+## 🏷️ How Spring Boot Integrates with JPA
+
+Spring Boot simplifies JPA integration by:
+
+* Providing `spring-boot-starter-data-jpa`
+* Auto-configuring a JPA `EntityManagerFactory`
+* Automatically scanning for `@Entity` classes
+* Integrating Hibernate as the default JPA provider
 
 > ✅ `Note:` For working sample refer [here](../src/main/java/com/vednexgen/user)
+
+### 📝 Program: Connect Spring Boot to H2/MySQL
 
 ### Step 1: Add Dependencies (pom.xml)
 
@@ -118,7 +157,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface UserRepository extends JpaRepository<User, Long> {}
 ```
 
-### Step 5: Demo Service
+### Step 5: User Service
 
 ```java
 import org.springframework.stereotype.Service;

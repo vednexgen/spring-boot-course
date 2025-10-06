@@ -10,7 +10,7 @@ By the end of this section, you will be able to:
 
 ---
 
-### 1️⃣ Why Do We Need Project Setup?
+### 🏷️ Why Do We Need Project Setup?
 
 Before we can build APIs or use Spring features, we need a **Spring Boot project structure**.
 Spring Boot simplifies project setup with:
@@ -21,7 +21,7 @@ Spring Boot simplifies project setup with:
 
 ---
 
-### 2️⃣ Tools Required
+### 🏷️ Tools Required
 
 * **JDK (Java 8/11/17/25)** – depending on your environment.
 * **IDE** – IntelliJ IDEA / Eclipse / VS Code.
@@ -30,7 +30,7 @@ Spring Boot simplifies project setup with:
 
 ---
 
-### 3️⃣ Creating a Spring Boot Project (Spring Initializr)
+### 🏷️ Creating a Spring Boot Project (Spring Initializr)
 
 #### Steps:
 
@@ -52,7 +52,7 @@ Spring Boot simplifies project setup with:
 
 ---
 
-### 4️⃣ Anatomy of a Spring Boot Project
+### 🏷️ Anatomy of a Spring Boot Project
 
 When the project opens, you’ll see:
 
@@ -75,7 +75,7 @@ demo/
 
 ---
 
-### 5️⃣ Running the Application
+### 🏷️ Running the Application
 
 Run the application:
 
@@ -89,7 +89,7 @@ Run the application:
 
 ---
 
-### 6️⃣ First Demo API
+### 🏷️ First Demo API
 
 Inside `src/main/java/com/example/demo/` create a controller:
 
@@ -119,7 +119,7 @@ public class HelloController {
 
 ---
 
-### 7️⃣ Flow Diagram
+### 🏷️ Flow Diagram
 
 ```
 Browser → Request (/hello) → DispatcherServlet → HelloController → Response ("Hello, Spring Boot!")
