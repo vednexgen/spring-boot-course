@@ -1,6 +1,5 @@
 package com.vednexgen.student.controller;
 
-import com.vednexgen.student.model.Status;
 import com.vednexgen.student.model.Student;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
