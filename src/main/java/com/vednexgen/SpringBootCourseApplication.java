@@ -30,7 +30,7 @@ public class SpringBootCourseApplication {
 			IO.println("Let's inspect the beans provided by Spring Boot, total beans found : " + beanNames.length);
 			Arrays.sort(beanNames);
 			for (String beanName : beanNames) {
-				IO.println(beanName);
+//				IO.println(beanName);
 			}
 
 		};
