@@ -12,11 +12,23 @@ management:
       show-details: always
 
 logging:
+  pattern:
+    #Set logging pattern for console and in file
+    console: "%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n"
+#    console: "%d{yyyy-MM-dd HH:mm:ss} %-5level - %msg%n"
+    file: '%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n'
+    #log file path and name configuration
+  file:
+    name: ./log/application.log
+    #log file rolling configuration
+  logback:
+    rollingpolicy:
+      max-history: 1
+      max-file-size: 5KB
+      file-name-pattern: ./log/application-%d{yyyy-MM-dd}.%i.log
+      #The maximum amount of size log archives can take before being deleted.
+      #total-size-cap: 10KB
+  #Set logging level
   level:
     root: INFO
     com.vednexgen: DEBUG
-  pattern:
-    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
-#    console: "%d{yyyy-MM-dd HH:mm:ss} %-5level - %msg%n"
-  file:
-    name: application.log
