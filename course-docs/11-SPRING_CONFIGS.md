@@ -44,7 +44,7 @@ public class AppConfig {
 
 public class Engine {
     public void start() {
-        System.out.println("Engine started!");
+        IO.println("Engine started!");
     }
 }
 
@@ -57,7 +57,7 @@ public class Car {
 
     public void drive() {
         engine.start();
-        System.out.println("Car is running!");
+        IO.println("Car is running!");
     }
 }
 ```
@@ -105,7 +105,7 @@ public class DatabaseConfig {
     private String dbUrl;
 
     public void printUrl() {
-        System.out.println("Database URL: " + dbUrl);
+        IO.println("Database URL: " + dbUrl);
     }
 }
 ```
@@ -125,7 +125,7 @@ public class DevConfig {
 
     @Bean
     public DataSource devDataSource() {
-        System.out.println("Using DEV database");
+        IO.println("Using DEV database");
         return new HikariDataSource();
     }
 }
@@ -136,7 +136,7 @@ public class ProdConfig {
 
     @Bean
     public DataSource prodDataSource() {
-        System.out.println("Using PROD database");
+        IO.println("Using PROD database");
         return new HikariDataSource();
     }
 }

@@ -120,7 +120,7 @@ public class Car {
     private Engine engine;
 
     public void start() {
-        System.out.println("Car started with engine: " + engine);
+        IO.println("Car started with engine: " + engine);
     }
 }
 ```
@@ -250,14 +250,14 @@ When multiple beans of the same type exist, `@Qualifier` helps Spring identify w
 @Component("petrolEngine")
 public class PetrolEngine implements Engine {
     public void start() {
-        System.out.println("Petrol Engine started");
+        IO.println("Petrol Engine started");
     }
 }
 
 @Component("dieselEngine")
 public class DieselEngine implements Engine {
     public void start() {
-        System.out.println("Diesel Engine started");
+        IO.println("Diesel Engine started");
     }
 }
 
@@ -317,7 +317,7 @@ Dependencies are provided through the class constructor. This is the **recommend
 @Component
 public class Engine {
     public void start() {
-        System.out.println("Engine started...");
+        IO.println("Engine started...");
     }
 }
 
@@ -332,7 +332,7 @@ public class Car {
 
     public void drive() {
         engine.start();
-        System.out.println("Car is running...");
+        IO.println("Car is running...");
     }
 }
 ```
@@ -367,7 +367,7 @@ public class Car {
 
     public void drive() {
         engine.start();
-        System.out.println("Car is running...");
+        IO.println("Car is running...");
     }
 }
 ```
@@ -397,7 +397,7 @@ public class Car {
 
     public void drive() {
         engine.start();
-        System.out.println("Car is running...");
+        IO.println("Car is running...");
     }
 }
 ```
@@ -461,7 +461,7 @@ Spring injects dependencies by matching the **type** of the bean.
 @Component
 public class Engine {
     public void start() {
-        System.out.println("Engine started...");
+        IO.println("Engine started...");
     }
 }
 
@@ -472,7 +472,7 @@ public class Car {
 
     public void drive() {
         engine.start();
-        System.out.println("Car is running...");
+        IO.println("Car is running...");
     }
 }
 ```
@@ -490,7 +490,7 @@ Spring injects dependencies by matching the **property name** with the bean name
 @Component("dieselEngine")
 public class Engine {
     public void start() {
-        System.out.println("Diesel Engine started...");
+        IO.println("Diesel Engine started...");
     }
 }
 
@@ -502,7 +502,7 @@ public class Car {
 
     public void drive() {
         engine.start();
-        System.out.println("Car is running...");
+        IO.println("Car is running...");
     }
 }
 ```

@@ -275,7 +275,7 @@ public class EmployeeController {
 * Use `logger.debug()` for development-level logs.
 * Use `logger.info()` for business events.
 * Use `logger.error()` for exception details.
-* Avoid `System.out.println()` in production code.
+* Avoid `System.out.println()` or `IO.println()` in production code.
 * Centralize logging using **Spring Boot Actuator → /actuator/loggers** endpoint.
 
 ---
