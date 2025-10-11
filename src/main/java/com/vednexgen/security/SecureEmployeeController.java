@@ -1,6 +1,7 @@
 package com.vednexgen.security;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,6 +12,11 @@ public class SecureEmployeeController {
     @GetMapping("/public/info")
     public String publicInfo() {
         return "This is public information.";
+    }
+
+    @PostMapping("/public/info")
+    public String postPublicInfo() {
+        return "Posting public information.";
     }
 
     @GetMapping("/user/profile")

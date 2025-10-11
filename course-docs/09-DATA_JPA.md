@@ -154,7 +154,11 @@ public class User {
 ```java
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserRepository extends JpaRepository<User, Long> {}
+public interface UserRepository extends JpaRepository<User, Long> {
+
+    User findByName(String name);
+
+}
 ```
 
 ### Step 5: User Service
@@ -176,6 +180,10 @@ public class UserService {
 
     public List<User> getAllUsers() {
         return userRepository.findAll();
+    }
+
+    public User findByName(String name) {
+        return userRepository.findByName(name);
     }
 }
 ```
@@ -204,6 +212,12 @@ public class EmployeeController {
     @GetMapping
     public List<User> getUsers() {
         return userService.getAllUsers();
+    }
+    
+    @GetMapping("/{name}")
+    public User getUser(@PathVariable String name) {
+        User byName = userService.findByName(name);
+        return byName;
     }
 }
 ```

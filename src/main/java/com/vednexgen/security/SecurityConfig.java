@@ -11,7 +11,10 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
+import static org.springframework.security.config.Customizer.withDefaults;
+
 @Configuration
+@EnableMethodSecurity
 public class SecurityConfig {
 
     // Define multiple users
@@ -36,14 +39,15 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
+                .csrf(csrf -> csrf.disable())  // disable CSRF
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/api/admin/**").hasRole("ADMIN")
-                        .requestMatchers("/api/user/**").hasAnyRole("USER", "ADMIN", "MANAGER")
+                        .requestMatchers("/api/user/**").hasAnyRole("USER", "ADMIN")
+                        .requestMatchers("/api/public/**").permitAll()
                         .anyRequest().authenticated()
-                        // 👇 Allow all other endpoints (publicly accessible)
-                        // .anyRequest().permitAll()
-                ).httpBasic(Customizer.withDefaults()) ;  // enable basic authentication
-
+//                         👇 Allow all other endpoints (publicly accessible)
+//                         .anyRequest().permitAll()
+                ).httpBasic(withDefaults());  // enable basic authentication
         return http.build();
     }
 }

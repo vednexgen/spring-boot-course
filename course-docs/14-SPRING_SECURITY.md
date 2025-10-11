@@ -86,7 +86,7 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableMethodSecurity
 public class SecurityConfig {
 
-    // ✅ Define multiple users
+    // Define multiple users
     @Bean
     public UserDetailsService userDetailsService() {
         UserDetails admin = User.withDefaultPasswordEncoder()
@@ -101,21 +101,22 @@ public class SecurityConfig {
                 .roles("USER")
                 .build();
 
-        return new InMemoryUserDetailsManager(admin, user, manager);
+        return new InMemoryUserDetailsManager(admin, user);
     }
 
-    // ✅ Configure HTTP security
+    // Configure HTTP security
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
+                .csrf(csrf -> csrf.disable())  // disable CSRF
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/admin/**").hasRole("ADMIN")
-                        .requestMatchers("/user/**").hasAnyRole("USER", "ADMIN", "MANAGER")
-                        .anyRequest().authenticated()
-                        // 👇 Allow all other endpoints (publicly accessible)
-                        // .anyRequest().permitAll()
-                ).httpBasic(Customizer.withDefaults()) ;  // enable basic authentication
-
+                                .requestMatchers("/api/admin/**").hasRole("ADMIN")
+                                .requestMatchers("/api/user/**").hasAnyRole("USER", "ADMIN")
+                                .requestMatchers("/api/public/**").permitAll()
+                                .anyRequest().authenticated()
+//                         👇 Allow all other endpoints (publicly accessible)
+//                         .anyRequest().permitAll()
+                ).httpBasic(withDefaults());  // enable basic authentication
         return http.build();
     }
 }
