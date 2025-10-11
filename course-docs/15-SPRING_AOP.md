@@ -47,7 +47,7 @@ Cross-cutting concerns are parts of a program that affect multiple layers or com
 
 ---
 
-### 🏷️ Program: Log Method Calls using AOP
+## 📚 Program: Log Method Calls using AOP
 
 ### Step 1️⃣ — Add Dependency
 
@@ -206,7 +206,7 @@ Around After: throwError took 0ms
 
 ---
 
-## 🧠 Understanding the Flow
+## ♻️ Understanding the Flow
 
 ---
 
@@ -219,7 +219,7 @@ D --> E["@After Advice → executes"]
 ```
 ---
 
-## ⚡ Pro Tips
+## 📌 Key Notes
 
 * Use **`@Around`** advice for performance monitoring or transaction control.
 * Define **reusable pointcuts** using `@Pointcut` annotation.
@@ -232,7 +232,7 @@ D --> E["@After Advice → executes"]
 
 ---
 
-## 📘 Summary
+## ✨ Summary
 
 | Concept          | Description                                                         |
 | ---------------- | ------------------------------------------------------------------- |
@@ -242,11 +242,3 @@ D --> E["@After Advice → executes"]
 | **Use Case**     | Logging, security, transactions, monitoring                         |
 
 ---
-
-## 🧩 Practice Task
-
-1. Add another method in `UserService` called `deleteUser()`.
-2. Modify the Aspect to log execution time using `@Around` advice.
-3. Print the time taken by each method.
-
-💡 This will help you understand **`@Around` advice** and **method execution timing** using AOP.
