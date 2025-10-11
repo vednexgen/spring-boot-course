@@ -49,6 +49,8 @@ Cross-cutting concerns are parts of a program that affect multiple layers or com
 
 ## 📚 Program: Log Method Calls using AOP
 
+> ✅ `Note:` For working sample refer [here](../src/main/java/com/vednexgen/aop)
+
 ### Step 1️⃣ — Add Dependency
 
 If using Maven, include the AOP starter in `pom.xml`:
