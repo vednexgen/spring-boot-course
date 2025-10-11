@@ -110,6 +110,8 @@ Then visit:
 
 ## 🏷️ Custom Health Indicator Example
 
+> ✅ `Note:` For working sample refer [here](../src/main/java/com/vednexgen/actuator)
+
 You can create your own health indicator by implementing the `HealthIndicator` interface.
 
 ```java
