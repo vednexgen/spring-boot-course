@@ -208,20 +208,15 @@ Around After: throwError took 0ms
 
 ## 🧠 Understanding the Flow
 
-```
-┌──────────────────────────────┐
-│       UserService.addUser()  │
-└──────────────┬───────────────┘
-               │
-        (AOP Intercepts)
-               │
-┌──────────────▼──────────────┐
-│ @Before Advice → executes   │
-│ Actual method executes      │
-│ @After Advice → executes    │
-└─────────────────────────────┘
-```
+---
 
+```mermaid
+graph TD
+A["UserService.addUser()"] --> B["AOP Intercepts"]
+B --> C["@Before Advice → executes"]
+C --> D["Actual method executes"]
+D --> E["@After Advice → executes"]
+```
 ---
 
 ## ⚡ Pro Tips
