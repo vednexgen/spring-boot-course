@@ -149,6 +149,16 @@ public class StudentController {
                 .orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
     }
 
+  // GET student by ID using Query Parameter
+  @GetMapping("/byId")
+  public ResponseEntity<Student> getStudentByQueryParam(@RequestParam("idValue") int id) {
+    return students.stream()
+            .filter(s -> s.getId() == id)
+            .findFirst()
+            .map(ResponseEntity::ok)
+            .orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
+  }
+
     // POST - Add new student
     @PostMapping
     public ResponseEntity<Student> addStudent(@RequestBody Student student) {
