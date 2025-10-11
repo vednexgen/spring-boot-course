@@ -101,12 +101,6 @@ public class SecurityConfig {
                 .roles("USER")
                 .build();
 
-        UserDetails manager = User.withDefaultPasswordEncoder()
-                .username("manager")
-                .password("password789")
-                .roles("MANAGER")
-                .build();
-
         return new InMemoryUserDetailsManager(admin, user, manager);
     }
 
@@ -116,11 +110,10 @@ public class SecurityConfig {
         http
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/admin/**").hasRole("ADMIN")
-                        .requestMatchers("/manager/**").hasAnyRole("ADMIN", "MANAGER")
                         .requestMatchers("/user/**").hasAnyRole("USER", "ADMIN", "MANAGER")
                         .anyRequest().authenticated()
                         // 👇 Allow all other endpoints (publicly accessible)
-                        .anyRequest().permitAll()
+                        // .anyRequest().permitAll()
                 ).httpBasic(Customizer.withDefaults()) ;  // enable basic authentication
 
         return http.build();

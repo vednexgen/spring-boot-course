@@ -29,13 +29,7 @@ public class SecurityConfig {
                 .roles("USER")
                 .build();
 
-        UserDetails manager = User.withDefaultPasswordEncoder()
-                .username("manager")
-                .password("password789")
-                .roles("MANAGER")
-                .build();
-
-        return new InMemoryUserDetailsManager(admin, user, manager);
+        return new InMemoryUserDetailsManager(admin, user);
     }
 
     // Configure HTTP security
@@ -44,9 +38,10 @@ public class SecurityConfig {
         http
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/api/admin/**").hasRole("ADMIN")
-                        .requestMatchers("/api/manager/**").hasAnyRole("ADMIN", "MANAGER")
                         .requestMatchers("/api/user/**").hasAnyRole("USER", "ADMIN", "MANAGER")
-                        .anyRequest().permitAll()
+                        .anyRequest().authenticated()
+                        // 👇 Allow all other endpoints (publicly accessible)
+                        // .anyRequest().permitAll()
                 ).httpBasic(Customizer.withDefaults()) ;  // enable basic authentication
 
         return http.build();
