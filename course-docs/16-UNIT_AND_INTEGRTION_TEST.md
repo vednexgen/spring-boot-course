@@ -9,6 +9,17 @@ This topic covers:
 * Unit Testing with JUnit & Mockito
 * Integration Testing with @SpringBootTest and MockMVC
 
+### ⚙️ Add Dependency
+
+If using Maven, include the AOP starter in `pom.xml`:
+
+```xml
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-test</artifactId>
+    <scope>test</scope>
+</dependency>
+```
 ---
 
 ### 🏷️ 1. Unit Testing
