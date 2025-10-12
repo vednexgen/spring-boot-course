@@ -291,3 +291,14 @@ public class EmployeeController {
 | **Actuator Loggers** | Change logging levels at runtime            |
 
 ---
+<div>
+
+[![](https://img.shields.io/badge/Prev-⬅️-caddd6?style=for-the-badge&labelColor=caddd6)](12-ACTUATORS_MONITORING.md)
+&emsp;&emsp;
+[![](https://img.shields.io/badge/Next-➡️-caddd6?style=for-the-badge&labelColor=caddd6)](14-SPRING_SECURITY.md)
+
+</div>
+
+[![](https://img.shields.io/badge/Go_Back-🔙-d6cadd?style=for-the-badge&labelColor=d6cadd)](00-TABLE_CONTENT_README.md)
+
+---

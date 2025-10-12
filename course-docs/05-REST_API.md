@@ -1,4 +1,4 @@
-# 🚀 Day 5: REST APIs with Spring Boot
+# 🚀 REST APIs with Spring Boot
 
 ## 📚 Learning Objectives
 
@@ -229,5 +229,17 @@ Client → HTTP Request → Spring Boot Controller → Business Logic → Respon
 * Understood key Spring annotations (`@RestController`, `@GetMapping`, `@PostMapping`, etc.).
 * Built a CRUD Student API with proper status codes.
 * Tested APIs using Postman/browser.
+
+---
+
+<div>
+
+[![](https://img.shields.io/badge/Prev-⬅️-caddd6?style=for-the-badge&labelColor=caddd6)](04-SPRING_AUTO_CONFIG.md)
+&emsp;&emsp;
+[![](https://img.shields.io/badge/Next-➡️-caddd6?style=for-the-badge&labelColor=caddd6)](06-REST_API_ANNOTATIONS.md)
+
+</div>
+
+[![](https://img.shields.io/badge/Go_Back-🔙-d6cadd?style=for-the-badge&labelColor=d6cadd)](00-TABLE_CONTENT_README.md)
 
 ---

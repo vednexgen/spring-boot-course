@@ -1,4 +1,4 @@
-# 🚀 REST API Documentation
+# 🚀 REST API Documentation Using Swagger Open API
 
 ## 📚 Introduction
 
@@ -43,6 +43,8 @@ This will open the **Swagger UI**, automatically documenting all your REST endpo
 ---
 
 ## 📚 Customizing Swagger Information
+
+> ✅ `Note:` For working sample refer SwaggerConfigs.java file [here](../src/main/java/com/vednexgen/config)
 
 You can customize the OpenAPI documentation using the `@OpenAPIDefinition` annotation.
 
@@ -141,5 +143,17 @@ springdoc:
 | **Springdoc OpenAPI**  | Integration library for Spring Boot        |
 | **@OpenAPIDefinition** | Customizes title, description, and version |
 | **application.yml**    | Used for Swagger path and UI customization |
+
+---
+
+<div>
+
+[![](https://img.shields.io/badge/Prev-⬅️-caddd6?style=for-the-badge&labelColor=caddd6)](16-UNIT_AND_INTEGRTION_TEST.md)
+&emsp;&emsp;
+[![](https://img.shields.io/badge/Next-➡️-caddd6?style=for-the-badge&labelColor=caddd6)](18-SECURITY_INTEGRATION_WITH_SWAGGER.md)
+
+</div>
+
+[![](https://img.shields.io/badge/Go_Back-🔙-d6cadd?style=for-the-badge&labelColor=d6cadd)](00-TABLE_CONTENT_README.md)
 
 ---

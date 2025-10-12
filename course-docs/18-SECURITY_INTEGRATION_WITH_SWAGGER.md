@@ -24,6 +24,8 @@ You can put it in either:
 * a dedicated configuration class, or
 * your main application class.
 
+> ✅ `Note:` For working sample refer SwaggerConfigs.java file [here](../src/main/java/com/vednexgen/config)
+
 #### Option 1 — Configuration Class (Recommended)
 
 ```java
@@ -151,5 +153,16 @@ flowchart TD
 | /swagger-ui.html not loading | Security blocked the endpoint        | Permit `/swagger-ui/**` and `/api-docs/**` in SecurityFilterChain |
 | Lock icon not showing        | Missing `@SecurityScheme` definition | Add `@SecurityScheme` annotation                                  |
 | Want all endpoints secured   | Apply globally                       | Add `@SecurityRequirement` at `@OpenAPIDefinition` level          |
+
+---
+<div>
+
+[![](https://img.shields.io/badge/Prev-⬅️-caddd6?style=for-the-badge&labelColor=caddd6)](17-SWAGGER_DOCUMENTATION.md)
+&emsp;&emsp;
+[![](https://img.shields.io/badge/Next-➡️-caddd6?style=for-the-badge&labelColor=caddd6)](19-SPRING_DEVTOOLS.md)
+
+</div>
+
+[![](https://img.shields.io/badge/Go_Back-🔙-d6cadd?style=for-the-badge&labelColor=d6cadd)](00-TABLE_CONTENT_README.md)
 
 ---

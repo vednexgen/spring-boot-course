@@ -228,3 +228,14 @@ graph TD
 **In short:** Actuator turns your Spring Boot app into an *observable system* — giving insights and control over the application health, metrics, and configurations.
 
 ---
+<div>
+
+[![](https://img.shields.io/badge/Prev-⬅️-caddd6?style=for-the-badge&labelColor=caddd6)](11-SPRING_CONFIGS.md)
+&emsp;&emsp;
+[![](https://img.shields.io/badge/Next-➡️-caddd6?style=for-the-badge&labelColor=caddd6)](13-LOGGING.md)
+
+</div>
+
+[![](https://img.shields.io/badge/Go_Back-🔙-d6cadd?style=for-the-badge&labelColor=d6cadd)](00-TABLE_CONTENT_README.md)
+
+---
