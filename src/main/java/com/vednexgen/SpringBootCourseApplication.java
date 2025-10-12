@@ -42,11 +42,12 @@ public class SpringBootCourseApplication {
 	@Bean("aopRunner")
 	@Order(2)
 	CommandLineRunner aopRunner(UserService userService) {
+		// uncomment the below code to understand example for Spring AOP.
 		return args -> {
-			userService.addUser("Atrangi");
-			userService.getUser();
+//			userService.addUser("Atrangi");
+//			userService.getUser();
 			try {
-				userService.throwError();
+//				userService.throwError();
 			} catch (Exception ignored) {}
 		};
 	}
