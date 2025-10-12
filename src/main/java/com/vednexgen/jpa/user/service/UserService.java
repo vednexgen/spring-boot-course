@@ -1,14 +1,14 @@
-package com.vednexgen.user.service;
+package com.vednexgen.jpa.user.service;
 
-import com.vednexgen.user.entity.User;
-import com.vednexgen.user.repository.UserRepository;
+import com.vednexgen.jpa.user.entity.User;
+import com.vednexgen.jpa.user.repository.UserRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-@Service
+@Service("jpaUserService")
 public class UserService {
 
     @Autowired

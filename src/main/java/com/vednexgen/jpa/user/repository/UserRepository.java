@@ -1,6 +1,6 @@
-package com.vednexgen.user.repository;
+package com.vednexgen.jpa.user.repository;
 
-import com.vednexgen.user.entity.User;
+import com.vednexgen.jpa.user.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UserRepository extends JpaRepository<User, Long> {

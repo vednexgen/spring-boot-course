@@ -44,9 +44,9 @@ public class SecurityConfig {
                         .requestMatchers("/api/admin/**").hasRole("ADMIN")
                         .requestMatchers("/api/user/**").hasAnyRole("USER", "ADMIN")
                         .requestMatchers("/api/public/**").permitAll()
-                        .anyRequest().authenticated()
+//                        .anyRequest().authenticated()
 //                         👇 Allow all other endpoints (publicly accessible)
-//                         .anyRequest().permitAll()
+                         .anyRequest().permitAll()
                 ).httpBasic(withDefaults());  // enable basic authentication
         return http.build();
     }

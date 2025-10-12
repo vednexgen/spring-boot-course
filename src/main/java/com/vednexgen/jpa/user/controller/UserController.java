@@ -1,7 +1,7 @@
-package com.vednexgen.user.controller;
+package com.vednexgen.jpa.user.controller;
 
-import com.vednexgen.user.entity.User;
-import com.vednexgen.user.service.UserService;
+import com.vednexgen.jpa.user.entity.User;
+import com.vednexgen.jpa.user.service.UserService;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 

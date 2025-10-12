@@ -2,7 +2,7 @@ package com.vednexgen.aop.service;
 
 import org.springframework.stereotype.Service;
 
-@Service
+@Service("aopUserService")
 public class UserService {
 
     public void addUser(String name) {

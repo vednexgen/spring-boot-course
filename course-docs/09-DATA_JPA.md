@@ -87,7 +87,7 @@ Spring Boot simplifies JPA integration by:
 * Automatically scanning for `@Entity` classes
 * Integrating Hibernate as the default JPA provider
 
-> ✅ `Note:` For working sample refer [here](../src/main/java/com/vednexgen/user)
+> ✅ `Note:` For working sample refer [here](../src/main/java/com/vednexgen/jpa/user)
 
 ### 📝 Program: Connect Spring Boot to H2/MySQL
 

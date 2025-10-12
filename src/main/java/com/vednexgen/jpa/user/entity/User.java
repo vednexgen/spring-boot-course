@@ -1,4 +1,4 @@
-package com.vednexgen.user.entity;
+package com.vednexgen.jpa.user.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;

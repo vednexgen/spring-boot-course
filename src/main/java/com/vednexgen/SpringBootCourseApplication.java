@@ -1,10 +1,12 @@
 package com.vednexgen;
 
+import com.vednexgen.aop.service.UserService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
+import org.springframework.core.annotation.Order;
 
 import java.util.Arrays;
 
@@ -22,7 +24,8 @@ public class SpringBootCourseApplication {
 	 * @param ctx ApplicationContext object
 	 * @return
 	 */
-	@Bean
+	@Bean("commandLineRunner")
+	@Order(1)
 	public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
 		return args -> {
 
@@ -33,6 +36,18 @@ public class SpringBootCourseApplication {
 //				IO.println(beanName);
 			}
 
+		};
+	}
+
+	@Bean("aopRunner")
+	@Order(2)
+	CommandLineRunner aopRunner(UserService userService) {
+		return args -> {
+			userService.addUser("Atrangi");
+			userService.getUser();
+			try {
+				userService.throwError();
+			} catch (Exception ignored) {}
 		};
 	}
 
