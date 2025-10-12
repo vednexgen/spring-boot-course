@@ -1,5 +1,6 @@
 package com.vednexgen.security;
 
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,6 +21,7 @@ public class SecureEmployeeController {
     }
 
     @GetMapping("/user/profile")
+    @SecurityRequirement(name = "basicAuth")
     public String userProfile() {
         return "This is user profile page.";
     }
