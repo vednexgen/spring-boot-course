@@ -51,7 +51,7 @@ public class EmployeeController {
 **Example:**
 
 ```java
-@ControllerAdvice
+@RestControllerAdvice
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(Exception.class)
