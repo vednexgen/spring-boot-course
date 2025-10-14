@@ -67,7 +67,7 @@ public class GlobalExceptionHandler {
 ## 🏷️ Validation in Spring Boot
 
 - Spring Boot integrates with **Hibernate Validator** (JSR-380/JSR-303 implementation) to validate user input.  
-- Spring Boot does not bundle Hibernate Validator directly in the core — instead, it autoconfigures it when you include the `spring-boot-starter-web` or `spring-boot-starter-validation` dependency.
+- Spring Boot does not bundle Hibernate Validator directly in the core — instead, it autoconfigures it when you include the `spring-boot-starter-validation` dependency.
 
 ### 🔹 Common Validation Annotations
 
@@ -80,6 +80,9 @@ public class GlobalExceptionHandler {
 ### 🔹 Example with `@Valid`
 
 ```java
+@Setter
+@Getter
+@AllArgsConstructor
 public class EmployeeDTO {
 
     @NotNull(message = "Name cannot be null")
@@ -104,7 +107,11 @@ public class EmployeeController {
     @PostMapping
     public ResponseEntity<String> createUser(@Valid @RequestBody EmployeeDTO user, BindingResult result) {
         if (result.hasErrors()) {
-            return ResponseEntity.badRequest().body(result.getAllErrors().toString());
+            List<String> errors = new ArrayList<>();
+            for (ObjectError error : result.getAllErrors()) {
+                errors.add(error.getDefaultMessage());
+            }
+            return ResponseEntity.badRequest().body(errors.toString());
         }
         return ResponseEntity.ok("User created successfully");
     }
@@ -144,10 +151,10 @@ Content-Type: application/json
 
 ## 🏷️ Benefits
 
-✅ Centralized error handling with `@ControllerAdvice`
-✅ Cleaner controllers with `@ExceptionHandler`
-✅ Ensures data integrity with validation
-✅ Better user experience with meaningful error messages
+✅ Centralized error handling with `@RestControllerAdvice`  
+✅ Cleaner controllers with `@ExceptionHandler`  
+✅ Ensures data integrity with validation  
+✅ Better user experience with meaningful error messages  
 
 ---
 
