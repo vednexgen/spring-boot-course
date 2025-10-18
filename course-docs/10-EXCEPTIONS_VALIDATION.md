@@ -43,7 +43,7 @@ public class EmployeeController {
 
 ---
 
-### 🔹 `@ControllerAdvice`
+### 🔹 `@RestControllerAdvice`
 
 * A global exception handler for all controllers.
 * Centralizes error handling logic.
@@ -161,7 +161,7 @@ Content-Type: application/json
 ## ✨ Summary
 
 * Use `@ExceptionHandler` for controller-specific exceptions.
-* Use `@ControllerAdvice` for global exception handling.
+* Use `@RestControllerAdvice` for global exception handling.
 * Use `@Valid` and validation annotations for input validation.
 * Always return **clear error responses** for client understanding.
 
